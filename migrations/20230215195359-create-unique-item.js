@@ -16,7 +16,8 @@ module.exports = {
         type: Sequelize.NUMBER
       },
       maxDamage: {
-        type: Sequelize.NUMBER
+        type: Sequelize.NUMBER,
+        min: this.minDamage+1
       },
       charId: {
         type: Sequelize.INTEGER

@@ -10,13 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      UniqueItem.belongsTo(models.Character, {
+        foreignKey: 'charId'
+      })
     }
   }
   UniqueItem.init({
     name: DataTypes.STRING,
-    minDamage: DataTypes.NUMBER,
-    maxDamage: DataTypes.NUMBER,
+    minDamage: {
+      type: DataTypes.NUMBER,
+    },
+    maxDamage: {
+      type: DataTypes.NUMBER,
+      min: this.minDamage+1
+    },
     charId: DataTypes.INTEGER
   }, {
     sequelize,

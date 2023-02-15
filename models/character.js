@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
 
     static associate(models) {
-
+      Character.hasMany(models.UniqueItem, {
+        foreignKey: 'charId',
+        as: 'uniqueItems'
+      })
     }
   }
 
