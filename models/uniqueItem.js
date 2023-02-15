@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   UniqueItem.init({
     name: DataTypes.STRING,
+    weaponType: DataTypes.STRING,
     minDamage: {
       type: DataTypes.INTEGER,
     },
