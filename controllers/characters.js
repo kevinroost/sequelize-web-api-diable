@@ -18,7 +18,18 @@ const create = async (req, res) => {
   }
 }
 
+const addUniqueWeapon = async (req, res) => {
+  try {
+    req.body.charId = req.params.id
+    const weapon = await uniqueWeapon.create(req.body)
+    res.status(200).json(weapon)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+
 module.exports = {
   index,
   create,
+  addUniqueWeapon,
 }

@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
   class Character extends Model {
 
     static associate(models) {
-      Character.hasMany(models.UniqueItem, {
+      Character.hasMany(models.UniqueWeapon, {
         foreignKey: 'charId',
-        as: 'uniqueItems'
+        as: 'uniqueWeapon'
       })
     }
   }
