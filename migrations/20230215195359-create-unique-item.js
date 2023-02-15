@@ -13,10 +13,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       minDamage: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       maxDamage: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         min: this.minDamage+1
       },
       charId: {

@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   UniqueItem.init({
     name: DataTypes.STRING,
     minDamage: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
     },
     maxDamage: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       min: this.minDamage+1
     },
     charId: DataTypes.INTEGER
