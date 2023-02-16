@@ -5,5 +5,7 @@ const charCtrl = require('../controllers/characters.js')
 router.get('/', charCtrl.index)
 router.post('/', charCtrl.create)
 router.post('/:id', charCtrl.addUniqueWeapon)
+router.put('/:id', charCtrl.update)
+router.delete('/:id', charCtrl.delete)
 
 module.exports = router

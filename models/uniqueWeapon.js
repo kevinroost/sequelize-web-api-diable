@@ -23,12 +23,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     maxDamage: {
       type: DataTypes.INTEGER,
-      min: this.minDamage+1
     },
-    charId: DataTypes.INTEGER
+    charId: DataTypes.INTEGER,
+    // hooks: {
+    //   beforeCreate: (UniqueWeapon) => {
+    //     if (UniqueWeapon.maxDamage <= UniqueWeapon.minDamage) {
+    //       throw new Error("Maximum Damage needs to be greater than Minimum Damage!")
+    //     }
+    //   }
+    // }
   }, {
     sequelize,
     modelName: 'UniqueWeapon',
   });
+
+  // UniqueWeapon.beforeCreate(UniqueWeapon)
+
   return UniqueWeapon;
 };
