@@ -37,7 +37,12 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'UniqueWeapon',
   });
 
-  // UniqueWeapon.beforeCreate(UniqueWeapon)
+  UniqueWeapon.beforeCreate(async (UniqueWeapon) => {
+    if (UniqueWeapon.maxDamage <= UniqueWeapon.minDamage) {
+      console.log('NOOOOOO');
+      throw new Error("Maximum Damage needs to be greater than Minimum Damage!")
+    }
+  })
 
   return UniqueWeapon;
 };
